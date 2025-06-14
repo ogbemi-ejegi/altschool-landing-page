@@ -1,119 +1,55 @@
-# AltSchool Dynamic Landing Page Prototype 🚀
+# AltSchool Landing Page – Semester Project
 
-A professionally deployed, responsive landing page created as part of the **AltSchool Second Semester Exams**. This project demonstrates web development, server configuration, and deployment skills.
+This repository contains the implementation of a dynamic landing page built as part of the second semester AltSchool Cloud Engineering project.
 
----
+## Project Overview
 
-## 🎨 Project Preview
+This project showcases a professionally deployed, responsive landing page enhanced with animations and interactive sections. It is hosted on a Linux server environment using Nginx and was created to demonstrate deployment, system setup, and frontend development skills.
 
-![Rendered Page Screenshot](assets/Altschool landing page.png)
-
----
-
-## 🔧 Steps Taken
-
-### 1. **Server Setup**
-
-* Used **WSL2 with Ubuntu** on Windows.
-* Updated package list:
-
-  ```bash
-  sudo apt update && sudo apt upgrade
-  ```
-* Installed necessary packages:
-
-  ```bash
-  sudo apt install nginx git curl
-  ```
-
-### 2. **Web Server Configuration**
-
-* Started and enabled Nginx:
-
-  ```bash
-  sudo systemctl start nginx
-  sudo systemctl enable nginx
-  ```
-* Verified that Nginx listens on port 80:
-
-  ```bash
-  sudo netstat -tulpn | grep :80
-  ```
-* Checked server IP address using:
-
-  ```bash
-  ip addr show eth0
-  ```
-
-### 3. **Landing Page Development**
-
-* Created a folder: `/var/www/html/dynamic-landing-page`
-* Developed a single HTML page using:
-
-  * Tailwind CSS (`assets/tailwind.min.css`)
-  * AOS.js for animations (`assets/aos.css` and `assets/aos.js`)
-  * Sections included:
-
-    * Navbar
-    * Hero Section
-    * Services
-    * Portfolio
-    * Testimonials
-    * Contact Form
-    * Footer
-
-### 4. **Making It Dynamic & Responsive**
-
-* Ensured layout was responsive with Tailwind classes.
-* Used `data-aos` attributes for scroll-based animations.
-* Created a modern, investor-friendly layout.
-
-### 5. **Deployment**
-
-* Moved files into the Nginx default root:
-
-  ```bash
-  sudo cp -r * /var/www/html/
-  sudo systemctl restart nginx
-  ```
-* Opened browser and accessed via `http://<http://172.17.136.103/>`.
-
-### 6. **Version Control & GitHub**
-
-* Initialized a Git repo:
-
-  ```bash
-  git init
-  git remote add origin git@github.com:ogbemi-ejegi/altschool-landing-page.git
-  ```
-* Added SSH key to GitHub for authentication.
-* Pushed to remote:
-
-  ```bash
-  git add .
-  git commit -m "Initial commit"
-  git push -u origin main
-  ```
+>  Live Project URL: [http://172.17.136.103/dynamic-landing-page/](http://172.17.136.103/dynamic-landing-page/)
 
 ---
 
-## Repository Structure
+## Screenshot
 
-```
-/dynamic-landing-page
-├── index.html
-├── assets/
-│   ├── tailwind.min.css
-│   ├── aos.css
-│   └── aos.js
-└── README.md
-```
+![Landing Page Screenshot](assets/landing-page.png)
 
+---
 
-##  Contact
+##Tech Stack
 
-Ogbemi Ejegi
-GitHub: [@ogbemi-ejegi](https://github.com/ogbemi-ejegi)
-Email: (ejegi.ogbemi@gmail.com)
+- HTML5 & Tailwind CSS
+- AOS.js for animations
+- Nginx Web Server
+- Git & GitHub for version control
+- Ubuntu (WSL2) for local server environment
 
+---
+
+##  Setup & Deployment Steps
+
+### 1. **Install and Configure WSL2**
+
+- Install Ubuntu via WSL2 on Windows
+- Update and upgrade system packages
+  ```bash
+  sudo apt update && sudo apt upgrade -y
+
+# Install and Start Nginx
+- sudo apt install nginx -y
+- sudo service nginx start
+
+# Project folder structure
+/var/www/html/
+└── dynamic-landing-page/
+    ├── index.html
+    └── assets/
+        ├── tailwind.min.css
+        ├── aos.css
+        ├── aos.js
+        └── landing-page.png
+
+# Cloning and Configureing the Repo
+- git clone git@github.com:ogbemi-ejegi/altschool-landing-page.git
+- cd altschool-landing-page
 
