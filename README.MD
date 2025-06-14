@@ -4,6 +4,10 @@ A professionally deployed, responsive landing page created as part of the **AltS
 
 ---
 
+## 🌐 Live Demo
+
+Access the project here: **http\://\<172.17.136.103>**
+
 ## 🎨 Project Preview
 
 ![Rendered Page Screenshot](assets/screenshot.png)
@@ -76,7 +80,7 @@ A professionally deployed, responsive landing page created as part of the **AltS
   sudo cp -r * /var/www/html/
   sudo systemctl restart nginx
   ```
-* Opened browser and accessed via `http://<http://172.17.136.103/>`.
+* Opened browser and accessed via `http://172.17.136.103`.
 
 ### 6. **Version Control & GitHub**
 
@@ -97,7 +101,7 @@ A professionally deployed, responsive landing page created as part of the **AltS
 
 ---
 
-## Repository Structure
+## 📂 Repository Structure
 
 ```
 /dynamic-landing-page
@@ -109,11 +113,15 @@ A professionally deployed, responsive landing page created as part of the **AltS
 └── README.md
 ```
 
+---
 
-##  Contact
+## 💌 Contact
 
-Ogbemi Ejegi
+**Ogbemi Ejegi**
 GitHub: [@ogbemi-ejegi](https://github.com/ogbemi-ejegi)
-Email: (ejegi.ogbemi@gmail.com)
+Email: [ejegi.ogbemi@gmail.com]
 
+---
+
+> **Note:** Replace `<YOUR_PUBLIC_IP>` and the screenshot path as needed.
 
