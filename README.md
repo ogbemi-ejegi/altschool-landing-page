@@ -6,7 +6,7 @@ A professionally deployed, responsive landing page created as part of the **AltS
 
 ## 🎨 Project Preview
 
-![Rendered Page Screenshot](assets/screenshot.png)
+![Rendered Page Screenshot](assets/Altschool landing page.png)
 
 ---
 
