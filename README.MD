@@ -1,127 +1,100 @@
-# AltSchool Dynamic Landing Page Prototype 🚀
+# AltSchool Landing Page – Semester Project
 
-A professionally deployed, responsive landing page created as part of the **AltSchool Second Semester Exams**. This project demonstrates web development, server configuration, and deployment skills.
+This repository contains the implementation of a dynamic landing page built as part of the second semester AltSchool Cloud Engineering project.
 
----
+## Project Overview
 
-## 🌐 Live Demo
+This project showcases a professionally deployed, responsive landing page enhanced with animations and interactive sections. It is hosted on a Linux server environment using Nginx and was created to demonstrate deployment, system setup, and frontend development skills.
 
-Access the project here: **http\://\<172.17.136.103>**
-
-## 🎨 Project Preview
-
-![Rendered Page Screenshot](assets/screenshot.png)
+>  Live Project URL: [http://172.17.136.103/dynamic-landing-page/](http://172.17.136.103/dynamic-landing-page/)
+>  URL: http://altschool.chickenkiller.com
 
 ---
 
-## 🔧 Steps Taken
+## Screenshot
 
-### 1. **Server Setup**
-
-* Used **WSL2 with Ubuntu** on Windows.
-* Updated package list:
-
-  ```bash
-  sudo apt update && sudo apt upgrade
-  ```
-* Installed necessary packages:
-
-  ```bash
-  sudo apt install nginx git curl
-  ```
-
-### 2. **Web Server Configuration**
-
-* Started and enabled Nginx:
-
-  ```bash
-  sudo systemctl start nginx
-  sudo systemctl enable nginx
-  ```
-* Verified that Nginx listens on port 80:
-
-  ```bash
-  sudo netstat -tulpn | grep :80
-  ```
-* Checked server IP address using:
-
-  ```bash
-  ip addr show eth0
-  ```
-
-### 3. **Landing Page Development**
-
-* Created a folder: `/var/www/html/dynamic-landing-page`
-* Developed a single HTML page using:
-
-  * Tailwind CSS (`assets/tailwind.min.css`)
-  * AOS.js for animations (`assets/aos.css` and `assets/aos.js`)
-  * Sections included:
-
-    * Navbar
-    * Hero Section
-    * Services
-    * Portfolio
-    * Testimonials
-    * Contact Form
-    * Footer
-
-### 4. **Making It Dynamic & Responsive**
-
-* Ensured layout was responsive with Tailwind classes.
-* Used `data-aos` attributes for scroll-based animations.
-* Created a modern, investor-friendly layout.
-
-### 5. **Deployment**
-
-* Moved files into the Nginx default root:
-
-  ```bash
-  sudo cp -r * /var/www/html/
-  sudo systemctl restart nginx
-  ```
-* Opened browser and accessed via `http://172.17.136.103`.
-
-### 6. **Version Control & GitHub**
-
-* Initialized a Git repo:
-
-  ```bash
-  git init
-  git remote add origin git@github.com:ogbemi-ejegi/altschool-landing-page.git
-  ```
-* Added SSH key to GitHub for authentication.
-* Pushed to remote:
-
-  ```bash
-  git add .
-  git commit -m "Initial commit"
-  git push -u origin main
-  ```
+![Landing Page Screenshot](assets/landing-page.png)
 
 ---
 
-## 📂 Repository Structure
+##Tech Stack
 
-```
-/dynamic-landing-page
-├── index.html
-├── assets/
-│   ├── tailwind.min.css
-│   ├── aos.css
-│   └── aos.js
-└── README.md
-```
+- HTML5 & Tailwind CSS
+- AOS.js for animations
+- Nginx Web Server
+- Git & GitHub for version control
+- Ubuntu (WSL2) for local server environment
 
 ---
 
-## 💌 Contact
+##  Setup & Deployment Steps
 
-**Ogbemi Ejegi**
-GitHub: [@ogbemi-ejegi](https://github.com/ogbemi-ejegi)
-Email: [ejegi.ogbemi@gmail.com]
+### 1. **Install and Configure WSL2**
 
----
+- Install Ubuntu via WSL2 on Windows
+- Update and upgrade system packages
+  ```bash
+  sudo apt update && sudo apt upgrade -y
 
-> **Note:** Replace `<YOUR_PUBLIC_IP>` and the screenshot path as needed.
+# Install and Start Nginx
+- sudo apt install nginx -y
+- sudo service nginx start
+
+# Project folder structure
+/var/www/html/
+└── dynamic-landing-page/
+    ├── index.html
+    └── assets/
+        ├── tailwind.min.css
+        ├── aos.css
+        ├── aos.js
+        └── landing-page.png
+
+# Cloning and Configureing the Repo
+- git clone git@github.com:ogbemi-ejegi/altschool-landing-page.git
+- cd altschool-landing-page
+
+# Deployment on AZURE + UBUNTU NGINX
+
+1. SSH into Azure VM
+   - ssh ogbemi@74.249.26.71
+     
+2. Install and start Nginx
+   - sudo apt update
+   - sudo apt install nginx -y
+
+3. Upload project files from WSL2
+   - scp -r ~/dynamic-landing-page/* ogbemi@74.249.26.71:/tmp
+
+4. Move files to Nginx web root
+   - sudo mv /tmp/* /var/www/html/
+     
+5. Restart Nginx
+   - sudo systemctl restart nginx
+
+
+Domain Setup
+Domain: altschool.chickenkiller.com
+Configured using FreeDNS (freedns.afraid.org)
+A record pointed to Azure VM public IP
+DNS propagation verified successfully
+
+# SSL Setup with Encrypt
+- sudo apt install certbot python3-certbot-nginx -y
+- sudo certbot --nginx -d altschool.chickenkiller.com
+
+TODO
+Retry SSL setup after rate limit resets
+
+Consider changing to a less-used FreeDNS domain
+
+Add contact form integration
+
+Add more sections like portfolio and testimonials
+
+Push codebase to GitHub with documentation
+
+Author
+Ogbemi Mene-Ejegi
+http://altschool.chickenkiller.com
 
